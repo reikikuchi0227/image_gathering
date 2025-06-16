@@ -1,5 +1,11 @@
+import os
+import hashlib
+from PIL import Image
 from icrawler.builtin import GoogleImageCrawler
+    
 
-crawler = GoogleImageCrawler(storage={"root_dir":r"C:\Users\harap\OneDrive - Kanazawa University\デスクトップ\pokemon\pokemon_dataset\img\133_Eevee"})
+keywords = ['イーブイ','イーブイ ぬいぐるみ', 'イーブイ アニメ', 'イーブイ アニメ']
 
-crawler.crawl(keyword="イーブイ", max_num=20)
+for keyword in keywords:
+    crawler = GoogleImageCrawler(storage={"root_dir":r"C:\Users\harap\OneDrive - Kanazawa University\デスクトップ\pokemon\pokemon_dataset\img\133_Eevee"})
+    crawler.crawl(keyword = keyword, max_num=50)
